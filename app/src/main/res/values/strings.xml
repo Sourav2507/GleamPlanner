@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">My_new_todo_list_Application</string>
+    <string-array name="priority_array">
+        <item>Low</item>
+        <item>Medium</item>
+        <item>High</item>
+    </string-array>
+    <string-array name="category_array">
+        <item>Family</item>
+        <item>Work</item>
+        <item>Personal</item>
+    </string-array>
+</resources>
