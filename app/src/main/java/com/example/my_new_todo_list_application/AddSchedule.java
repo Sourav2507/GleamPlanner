@@ -1,5 +1,7 @@
 package com.example.my_new_todo_list_application;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
@@ -75,6 +77,9 @@ public class AddSchedule extends AppCompatActivity {
             long result = db.addSchedule(schedule); // Assuming you have this method implemented in your DatabaseHelper
 
             if (result != -1) {
+                // Set the alarm for the selected time
+                setAlarmForSchedule(selectedTime);
+
                 Toast.makeText(this, "Schedule added successfully", Toast.LENGTH_SHORT).show();
                 // Redirect to the Schedule activity
                 Intent intent = new Intent(AddSchedule.this, Schedule.class);
@@ -84,5 +89,32 @@ public class AddSchedule extends AppCompatActivity {
                 Toast.makeText(this, "Failed to add schedule", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    private void setAlarmForSchedule(String selectedTime) {
+        // Split the selectedTime to get hour and minute
+        String[] timeParts = selectedTime.split(":");
+        int hour = Integer.parseInt(timeParts[0]);
+        int minute = Integer.parseInt(timeParts[1]);
+
+        // Create a Calendar object
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.HOUR_OF_DAY, hour); // set the hour
+        calendar.set(Calendar.MINUTE, minute); // set the minute
+        calendar.set(Calendar.SECOND, 0);
+
+        // If the selected time is in the past, move it to the next day
+        if (calendar.getTimeInMillis() < System.currentTimeMillis()) {
+            calendar.add(Calendar.DAY_OF_YEAR, 1);
+        }
+
+        // Create the alarm intent
+        Intent intent = new Intent(this, AlarmReceiver.class);
+        intent.putExtra("time", selectedTime); // Pass any extra data if needed
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+        // Set the alarm
+        AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+        alarmManager.setExact(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
     }
 }
