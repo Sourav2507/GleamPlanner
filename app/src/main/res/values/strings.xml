@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My_new_todo_list_Application</string>
+    <string name="app_name">GleamPlanner</string>
     <string-array name="priority_array">
         <item>Low</item>
         <item>Medium</item>

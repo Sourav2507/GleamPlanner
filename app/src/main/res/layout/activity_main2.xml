@@ -27,7 +27,7 @@
                 android:padding="17dp"
                 android:layout_margin="7dp"
                 android:textColor="@color/black"
-                android:textSize="30dp" />
+                android:textSize="25dp" />
             <Button
                 android:id="@+id/deleteAllButton"
                 android:layout_width="wrap_content"
@@ -54,7 +54,7 @@
                 android:textColor="@color/black"
                 android:layout_height="wrap_content"
                 android:text="Todo List"
-                android:textSize="20dp"
+                android:textSize="15dp"
                 android:layout_weight="1"/>
 
             <TextView
@@ -67,7 +67,7 @@
                 android:fontFamily="@font/aclonica"
                 android:gravity="center"
                 android:text="Reminders"
-                android:textSize="20dp" />
+                android:textSize="15dp" />
             <TextView
                 android:id="@+id/schedule"
                 android:padding="7dp"
@@ -78,7 +78,7 @@
                 android:fontFamily="@font/aclonica"
                 android:gravity="center"
                 android:text="Schedule"
-                android:textSize="20dp" />
+                android:textSize="15dp"/>
         </LinearLayout>
 
     </LinearLayout>
