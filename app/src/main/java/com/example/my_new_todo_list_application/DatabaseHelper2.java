@@ -75,4 +75,11 @@ public class DatabaseHelper2 extends SQLiteOpenHelper {
         db.delete(TABLE_TODOS, COLUMN_ID + " = ?", new String[]{String.valueOf(id)});
         db.close();
     }
+
+    public void deleteAllTodos() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DELETE FROM " + TABLE_TODOS); // Replace TABLE_TODOS with your actual table name
+        db.close();
+    }
+
 }
