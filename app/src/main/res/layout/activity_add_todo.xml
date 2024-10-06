@@ -44,35 +44,7 @@
     </LinearLayout>
 
     <!-- Date Selector -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:layout_margin="2dp">
 
-        <ImageView
-            android:layout_width="40dp"
-            android:layout_height="match_parent"
-            android:src="@drawable/baseline_calendar_view_day_24"/>
-
-        <TextView
-            android:id="@+id/selectdate"
-            android:layout_marginLeft="7dp"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:padding="7dp"
-            android:fontFamily="@font/aclonica"
-            android:text="Select Date"
-            android:textSize="25dp"
-            android:layout_weight="1"/>
-
-        <Button
-            android:backgroundTint="#6100FF"
-            android:id="@+id/date_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Pick Date"/>
-    </LinearLayout>
 
     <!-- Time Selector -->
     <LinearLayout
@@ -106,7 +78,33 @@
     </LinearLayout>
 
     <!-- Priority Selection -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:layout_margin="2dp">
 
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/baseline_category_24"/>
+
+        <TextView
+            android:layout_marginLeft="7dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="7dp"
+            android:fontFamily="@font/aclonica"
+            android:text="Category"
+            android:textSize="25dp"/>
+
+        <Spinner
+            android:id="@+id/category_spinner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_weight="1"/>
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
