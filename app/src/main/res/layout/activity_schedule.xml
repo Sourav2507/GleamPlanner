@@ -27,15 +27,7 @@
                 android:layout_margin="7dp"
                 android:textColor="@color/black"
                 android:textSize="30dp" />
-            <Button
-                android:id="@+id/deleteAllButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Delete All"
-                android:textSize="15dp"
-                android:backgroundTint="#FFB701"
-                android:fontFamily="@font/aclonica"
-                android:textColor="@color/black"/>
+
         </LinearLayout>
 
 
